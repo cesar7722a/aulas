@@ -5,6 +5,7 @@ import classesRoute from "./class.routes.js";
 import courseRoute from "./course.route.js";
 import studentCourseRoute from "./student-class.route.js";
 import userRoute from "./user.route.js";
+import userLogin from "./auth.routes.js";
 
 const router = Router();
 
@@ -14,5 +15,6 @@ router.use("/class", classesRoute);
 router.use("/course", courseRoute);
 router.use("/student-course", studentCourseRoute);
 router.use("/user", userRoute);
+router.use("/login", userLogin);
 
 export default router;
