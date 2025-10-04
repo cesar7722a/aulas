@@ -1,4 +1,4 @@
 export default {
-  secret: "segredo123",
-  expiresIn: "1h",
+  secret: process.env.JWT_SECRET || "segredo123",
+  expiresIn: process.env.JWT_EXPIRES_IN || "1h",
 };
