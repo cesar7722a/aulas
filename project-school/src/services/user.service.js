@@ -1,8 +1,12 @@
 import prisma from "../libs/prisma.js";
+import bcrypt from "bcryptjs";
 
 export const createUser = async (body) => {
+  const password = bcrypt.hashSync(body.password, 10);
+  const email = body.email;
+  const nome = body.nome;
   return await prisma.user.create({
-    data: body,
+    data: { nome, email, password },
   });
 };
 
