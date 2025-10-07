@@ -8,6 +8,13 @@ export const authLogin = async (req, res) => {
 
   try {
     const user = await login(email);
+    console.log({
+      email,
+      passwordDigitada: password,
+      userEncontrado: !!user,
+      passwordNoBanco: user?.password,
+      comparacao: user ? await bcrypt.compare(password, user.password) : null,
+    });
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ error: "Credenciais inválidas" });
