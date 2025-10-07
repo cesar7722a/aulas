@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+  role     String // Ex: "admin", "manager", "employee"
+}
+
+model Employee {
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  positionId String
+  salary     Float
+  position   Position @relation(fields: [positionId], references: [id])
+}
+
+model Position {
+  id        String     @id @default(uuid())
+  name      String
+  level     String
+  employees Employee[]
+}
