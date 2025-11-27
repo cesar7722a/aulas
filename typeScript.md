@@ -1,4 +1,3 @@
-Perfeito 👌
 Vamos fazer **um passo a passo completo** e limpo para começar um **projeto Node.js + TypeScript**, totalmente configurado e pronto para rodar.
 
 > 🎯 Objetivo: criar uma base sólida para futuros projetos com Express, Prisma, JWT, etc.
@@ -26,7 +25,7 @@ npm init -y
 
 ---
 
-## 🚀 **3️⃣ Instala as dependências principais**
+## **3️⃣ Instala as dependências principais**
 
 Aqui instalas o **TypeScript**, tipos, e utilitários básicos para desenvolvimento.
 
